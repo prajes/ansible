@@ -18,6 +18,20 @@
     - name: Install flask for Python
       pip:
         name: flask
+    - name: Install apache + php
+      apt:
+        name: libapache2-mod-php7.3
+        state: present
+    - name: Download dokuwiki into /usr/src/dokuwiki
+      get_url:
+        url: https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz 
+        dest: /usr/src/dokuwiki.tgz
+    - name: unzip  dokuwiki into /usr/src/dokuwiki
+      unarchive:
+        src: /usr/src/dokuwiki.tgz
+        dest: /usr/src
+        remote_src: yes
+
 
 - hosts: db
   tasks:

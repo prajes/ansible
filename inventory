@@ -3,23 +3,23 @@ server1 ansible_user=root
 server2 ansible_user=root
 
 [app]
-server2
-
-[proxy]
 server0
 
-[db]
-server1
+#[proxy]
+#server1
 
-[vm]
-server0
-server1
-server2
+#[db]
+#server2
 
-[real]
+#[vm]
+#server0
+#server1
+#server2
 
-[bureau1]
+#[real]
 
-[bureau2]
+#[bureau1]
+
+#[bureau2]
 
 
